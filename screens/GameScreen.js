@@ -1,4 +1,5 @@
 import { View, StyleSheet, Alert } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
 import Title from "../components/ui/Title";
 import { useEffect, useState } from "react";
 import NumberContainer from "../components/game/NumberCOntainer";
@@ -26,6 +27,11 @@ const GameScreen = ({ userNumber, onGameOver }) => {
   useEffect(() => {
     if (currentGuess === userNumber) onGameOver();
   }, [currentGuess, userNumber, onGameOver]);
+
+  useEffect(() => {
+    minBoundary = 1;
+    maxBoundary = 100;
+  }, []);
 
   const nextGuessHandler = (direction) => {
     if (
@@ -67,13 +73,13 @@ const GameScreen = ({ userNumber, onGameOver }) => {
               style={styles.buttonContainer}
               onPress={nextGuessHandler.bind(this, "lower")}
             >
-              -
+              <Ionicons name="md-remove" size={24} color={"white"} />
             </PrimaryButton>
             <PrimaryButton
               style={styles.buttonContainer}
               onPress={nextGuessHandler.bind(this, "greater")}
             >
-              +
+              <Ionicons name="md-add" size={24} color={"white"} />
             </PrimaryButton>
           </View>
         </View>

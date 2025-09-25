@@ -5,6 +5,7 @@ const InstructionText = ({ children, style }) => {
 };
 const styles = StyleSheet.create({
   instructionText: {
+    fontFamily: "open-sens",
     color: Colors.accent500,
     fontSize: 24,
   },
