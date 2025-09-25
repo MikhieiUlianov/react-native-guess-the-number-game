@@ -4,7 +4,7 @@ import { Colors } from "../../constants/colors";
 const Title = ({ children }) => {
   return (
     <View>
-      <Text styles={styles.title}>{children}</Text>
+      <Text style={styles.title}>{children}</Text>
     </View>
   );
 };
